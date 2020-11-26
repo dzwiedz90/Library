@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import com.library.database.MySQLConnector;
+import com.library.database.connector.MySQLConnector;
 
 public class CreateSampleDatabaseAndTables {
 	private Connection connection;

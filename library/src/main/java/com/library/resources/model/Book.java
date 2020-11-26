@@ -5,19 +5,21 @@ public class Book {
 	private String title;
 	private int isbn;
 	private int yearPublished;
-	private String author;
+	private String authorName;
+	private String authorSurname;
 	private String publisher;
 
 	public Book() {
 
 	}
 
-	public Book(int id, String title, int isbn, int yearPublished, String author, String publisher) {
+	public Book(int id, String title, int isbn, int yearPublished, String authorName, String authorSurname, String publisher) {
 		this.id = id;
 		this.title = title;
 		this.isbn = isbn;
 		this.yearPublished = yearPublished;
-		this.author = author;
+		this.authorName = authorName;
+		this.authorSurname = authorSurname;
 		this.publisher = publisher;
 	}
 
@@ -53,12 +55,20 @@ public class Book {
 		this.yearPublished = yearPublished;
 	}
 
-	public String getAuthor() {
-		return author;
+	public String getAuthorName() {
+		return authorName;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setAuthorName(String authorName) {
+		this.authorName = authorName;
+	}
+
+	public String getAuthorSurname() {
+		return authorSurname;
+	}
+
+	public void setAuthorSurname(String authorSurname) {
+		this.authorSurname = authorSurname;
 	}
 
 	public String getPublisher() {
