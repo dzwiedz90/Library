@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -21,5 +22,12 @@ public class BooksResource {
 	@GET
 	public List<Book> getAllBooks(){
 		return booksService.getAllBooks();
+	}
+	
+	@GET
+	@Path("/{bookId}")
+	public Book getMessage(@PathParam("bookId") long bookId) {
+		Book book =  booksService.getBook(bookId);
+		return book;
 	}
 }

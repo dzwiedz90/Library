@@ -19,4 +19,9 @@ public class BookService {
 	public List<Book> getAllBooks() {
 		return new ArrayList<Book>(books.values());
 	}
+	
+	public Book getBook(long id) {
+		Book book = books.get(id);
+		return book;
+	}
 }
