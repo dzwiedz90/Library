@@ -9,9 +9,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.library.database.dataaccess.BooksData;
 import com.library.database.sample.CreateSampleDatabaseAndTables;
 import com.library.database.sample.FillSampleDBWithData;
+import com.library.database.service.dataaccess.books.BooksData;
 
 @Path("/sample")
 public class SampleDatabaseResource {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.library.database.dataaccess.BooksData;
+import com.library.database.service.dataaccess.books.BooksData;
 import com.library.resources.model.Book;
 
 public class BookService {
