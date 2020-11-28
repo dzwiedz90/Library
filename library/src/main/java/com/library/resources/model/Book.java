@@ -1,7 +1,7 @@
 package com.library.resources.model;
 
 public class Book {
-	private int id;
+	private long id;
 	private String title;
 	private int isbn;
 	private int yearPublished;
@@ -23,12 +23,12 @@ public class Book {
 		this.publisher = publisher;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(long bookId) {
+		this.id = bookId;
 	}
 
 	public String getTitle() {

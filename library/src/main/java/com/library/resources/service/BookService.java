@@ -24,4 +24,25 @@ public class BookService {
 		Book book = books.get(id);
 		return book;
 	}
+	
+	public Book addBook(Book book) {
+//		message.setId(messages.size() + 1);
+//		messages.put(message.getId(), message);
+//		database action
+		return book;
+	}
+	
+	public Book updateBook(Book book) {
+//		if (message.getId() <= 0) {
+//			return null;
+//		}
+//		messages.put(message.getId(), message);
+//		database action
+		return book;
+	}
+	
+	public Book deleteBook(long id) {
+//		database action
+		return books.remove(id);
+	}
 }
