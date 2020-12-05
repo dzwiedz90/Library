@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.library.database.service.dataaccess.books.BooksParser;
-import com.library.database.service.wrappers.StatementWrapper;
+import com.library.database.service.wrappers.StatementExecutor;
 import com.library.resources.model.Author;
 
 public class AuthorsData {
@@ -17,7 +17,7 @@ public class AuthorsData {
 		Map<Long, Author> authors = new HashMap<>();
 
 		String query = "SELECT authors_id, authors_name, authors_surname, authors_biography, authors_year_born, authors_year_died FROM authors;";
-		StatementWrapper wrapper = new StatementWrapper(query, "query");
+		StatementExecutor wrapper = new StatementExecutor(query, "query");
 		authors = BooksParser.parseAllBooks(wrapper.rs);
 		wrapper.closeConnection();
 

@@ -24,14 +24,14 @@ public class AuthorService {
 		return author;
 	}
 	
-	public Author addBook(Author author) {
+	public Author addAuthor(Author author) {
 //		message.setId(messages.size() + 1);
 //		messages.put(message.getId(), message);
 //		database action
 		return author;
 	}
 	
-	public Author updateBook(Author author) {
+	public Author updateAuthor(Author author) {
 //		if (message.getId() <= 0) {
 //			return null;
 //		}
@@ -40,7 +40,7 @@ public class AuthorService {
 		return author;
 	}
 	
-	public Author deleteBook(long id) {
+	public Author deleteAuthor(long id) {
 //		database action
 		return authors.remove(id);
 	}

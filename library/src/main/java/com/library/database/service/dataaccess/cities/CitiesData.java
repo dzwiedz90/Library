@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.library.database.service.wrappers.StatementWrapper;
+import com.library.database.service.wrappers.StatementExecutor;
 import com.library.resources.model.City;
 
 public class CitiesData {
@@ -17,7 +17,7 @@ public class CitiesData {
 		Map<Long, City> cities = new HashMap<>();
 
 		String query = "SELECT * FROM cities;";
-		StatementWrapper wrapper = new StatementWrapper(query, "query");
+		StatementExecutor wrapper = new StatementExecutor(query, "query");
 		cities = CitiesParser.parseAllCities(wrapper.rs);
 		wrapper.closeConnection();
 

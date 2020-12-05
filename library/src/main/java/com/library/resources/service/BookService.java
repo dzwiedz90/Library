@@ -1,5 +1,6 @@
 package com.library.resources.service;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,9 +26,9 @@ public class BookService {
 	}
 	
 	public Book addBook(Book book) {
-//		message.setId(messages.size() + 1);
-//		messages.put(message.getId(), message);
-//		database action
+		book.setId(books.size() + 1);
+		books.put(book.getId(), book);
+		booksData.addBook(book);
 		return book;
 	}
 	

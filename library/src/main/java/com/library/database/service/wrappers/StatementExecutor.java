@@ -7,12 +7,12 @@ import java.sql.Statement;
 
 import com.library.database.service.connector.MySQLConnector;
 
-public class StatementWrapper {
+public class StatementExecutor {
 	public ResultSet rs = null;
 	private Connection connection;
 	private Statement statement = null;
 
-	public StatementWrapper(String query, String queryType) {
+	public StatementExecutor(String query, String queryType) {
 		if (queryType.equals("query")) {
 			executeQuery(query);
 		} else if (queryType.equals("update")) {
@@ -21,7 +21,13 @@ public class StatementWrapper {
 	}
 
 	public void executeUpdate(String query) {
-
+		try {
+			connection = MySQLConnector.connectMySQLDatabase();
+			statement = connection.createStatement();
+			statement.executeUpdate(query);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void executeQuery(String query) {

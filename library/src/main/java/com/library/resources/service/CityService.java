@@ -15,23 +15,23 @@ public class CityService {
 		cities = citiesData.getAllCities();
 	}
 
-	public List<City> getAllBooks() {
+	public List<City> getAllCities() {
 		return new ArrayList<City>(cities.values());
 	}
 	
-	public City getBook(long id) {
+	public City getCity(long id) {
 		City city = cities.get(id);
 		return city;
 	}
 	
-	public City addBook(City city) {
+	public City addCity(City city) {
 //		message.setId(messages.size() + 1);
 //		messages.put(message.getId(), message);
 //		database action
 		return city;
 	}
 	
-	public City updateBook(City city) {
+	public City updateCity(City city) {
 //		if (message.getId() <= 0) {
 //			return null;
 //		}
@@ -40,7 +40,7 @@ public class CityService {
 		return city;
 	}
 	
-	public City deleteBook(long id) {
+	public City deleteCity(long id) {
 //		database action
 		return cities.remove(id);
 	}

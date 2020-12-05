@@ -5,22 +5,43 @@ public class Book {
 	private String title;
 	private int isbn;
 	private int yearPublished;
+	private int authorId;
 	private String authorName;
 	private String authorSurname;
+	private int publisherId;
 	private String publisher;
 
 	public Book() {
 
 	}
 
-	public Book(int id, String title, int isbn, int yearPublished, String authorName, String authorSurname, String publisher) {
+	public Book(int id, String title, int isbn, int yearPublished, int authorId, String authorName,
+			String authorSurname, int publisherId, String publisher) {
 		this.id = id;
 		this.title = title;
 		this.isbn = isbn;
 		this.yearPublished = yearPublished;
+		this.authorId = authorId;
 		this.authorName = authorName;
 		this.authorSurname = authorSurname;
+		this.publisherId = publisherId;
 		this.publisher = publisher;
+	}
+
+	public int getAuthorId() {
+		return authorId;
+	}
+
+	public void setAuthorId(int authorId) {
+		this.authorId = authorId;
+	}
+
+	public int getPublisherId() {
+		return publisherId;
+	}
+
+	public void setPublisherId(int publisherId) {
+		this.publisherId = publisherId;
 	}
 
 	public long getId() {

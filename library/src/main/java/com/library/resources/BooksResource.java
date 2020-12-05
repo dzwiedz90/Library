@@ -21,7 +21,7 @@ import com.library.resources.service.BookService;
 @Produces(MediaType.APPLICATION_JSON)
 public class BooksResource {
 	
-	BookService booksService = new BookService();
+	BookService booksService = new BookService();		
 	
 	@GET
 	public List<Book> getAllBooks(){
@@ -36,8 +36,9 @@ public class BooksResource {
 	}
 	
 	@POST
-	public Book addBook(Book book) {
-		return booksService.addBook(book);	
+	public Response addBook(Book book) {
+		booksService.addBook(book);
+		return Response.created(null).entity(book).build();
 	}
 	
 	@PUT

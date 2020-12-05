@@ -19,19 +19,19 @@ public class PublisherService {
 		return new ArrayList<Publisher>(publishers.values());
 	}
 	
-	public Publisher getBook(long id) {
+	public Publisher getPublisher(long id) {
 		Publisher publisher = publishers.get(id);
 		return publisher;
 	}
 	
-	public Publisher addBook(Publisher publisher) {
+	public Publisher addPublisher(Publisher publisher) {
 //		message.setId(messages.size() + 1);
 //		messages.put(message.getId(), message);
 //		database action
 		return publisher;
 	}
 	
-	public Publisher updateBook(Publisher publisher) {
+	public Publisher updatePublisher(Publisher publisher) {
 //		if (message.getId() <= 0) {
 //			return null;
 //		}
@@ -40,7 +40,7 @@ public class PublisherService {
 		return publisher;
 	}
 	
-	public Publisher deleteBook(long id) {
+	public Publisher deletePublisher(long id) {
 //		database action
 		return publishers.remove(id);
 	}
