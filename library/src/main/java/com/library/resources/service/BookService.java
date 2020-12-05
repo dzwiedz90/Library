@@ -11,7 +11,6 @@ public class BookService {
 	BooksData booksData = new BooksData();
 	private Map<Long, Book> books;
 
-	@SuppressWarnings("unchecked")
 	public BookService() {
 		books = booksData.getAllBooks();
 	}
