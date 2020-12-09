@@ -9,8 +9,13 @@ import com.library.database.service.dataaccess.borrows.BorrowsData;
 import com.library.resources.model.Book;
 import com.library.resources.model.Borrow;
 
+/**
+ * Book service for handling book data between REST API and database
+ */
 public class BookService {
+	// Object that will run queries to database
 	BooksData booksData = new BooksData();
+	// Map with Book objects created using data from database
 	private Map<Long, Book> books;
 
 	public BookService() {

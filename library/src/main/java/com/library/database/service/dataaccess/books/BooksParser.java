@@ -10,6 +10,11 @@ import com.library.resources.model.Book;
 
 public class BooksParser {
 	
+	/**
+     * Static method that takes ResultSet as an argument which contains all books data from database and returns Map filled with Book objects created from data from ResultSet
+     *
+     * @param rs ResultSet with all books data selected from database
+     */
 	public static Map<Long, Book> parseAllBooks(ResultSet rs) {
 		Map<Long, Book> books = new HashMap<>();
 		try {
