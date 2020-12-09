@@ -20,37 +20,40 @@ import com.library.resources.service.BookService;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class BooksResource {
-	
-	BookService booksService = new BookService();		
-	
+
+	BookService booksService = new BookService();
+
 	@GET
-	public List<Book> getAllBooks(){
+	public List<Book> getAllBooks() {
 		return booksService.getAllBooks();
 	}
-	
+
 	@GET
 	@Path("/{bookId}")
 	public Book getMessage(@PathParam("bookId") long bookId) {
-		Book book =  booksService.getBook(bookId);
+		Book book = booksService.getBook(bookId);
 		return book;
 	}
-	
+
 	@POST
 	public Response addBook(Book book) {
 		booksService.addBook(book);
 		return Response.created(null).entity(book).build();
 	}
-	
+
 	@PUT
 	@Path("/{bookId}")
 	public Book updateBook(@PathParam("bookId") long bookId, Book book) {
 		book.setId(bookId);
 		return booksService.updateBook(book);
 	}
-	
+
 	@DELETE
 	@Path("/{bookId}")
-	public void deleteBook(@PathParam("bookId") long bookId) {
-		booksService.deleteBook(bookId);
+	public Response deleteBook(@PathParam("bookId") long bookId) {
+		if (booksService.deleteBook(bookId) == null) {
+			return Response.status(409).entity("book archiwed or borrowed").build();
+		} else
+			return Response.ok().entity("book archiwed").build();
 	}
 }

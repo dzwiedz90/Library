@@ -9,23 +9,23 @@ import com.library.resources.model.Book;
 import com.library.resources.model.Borrow;
 
 public class BorrowsParser {
-	
-	public static Map parseAllBorrows(ResultSet rs) {
+
+	public static Map<Long, Borrow> parseAllBorrows(ResultSet rs) {
 		Map<Long, Borrow> borrows = new HashMap<>();
-		try {
+		try {			
 			Long i = 1L;
 			while (rs.next()) {
 				Borrow borrow = new Borrow();
-				borrow.setId(rs.getInt("books_id"));
-				borrow.setDateBorrowed(rs.getString("books_title"));
-				borrow.setReturnDate(rs.getString("books_isbn"));
-				borrow.setIsReturned(rs.getBoolean("books_year_published"));
-				borrow.setBookId(rs.getInt("authors_name"));
-				borrow.setBookTitle(rs.getString("authors_surname"));
-				borrow.setReaderId(rs.getInt("publishers_name"));
-				borrow.setReaderName(rs.getString("publishers_name"));
-				borrow.setReaderSurname(rs.getString("publishers_name"));
-
+				borrow.setId(rs.getInt("borrows_id"));
+				borrow.setDateBorrowed(rs.getString("borrows_date_borrowed"));
+				borrow.setReturnDate(rs.getString("borrows_return_date"));
+				borrow.setIsReturned(rs.getBoolean("borrows_is_returned"));
+				borrow.setBookId(rs.getInt("books_id"));
+				borrow.setBookTitle(rs.getString("books_title"));
+				borrow.setReaderId(rs.getInt("readers_id"));
+				borrow.setReaderName(rs.getString("readers_name"));
+				borrow.setReaderSurname(rs.getString("readers_surname"));
+				
 				borrows.put(i, borrow);
 				i++;
 			}

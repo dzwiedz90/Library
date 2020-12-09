@@ -10,7 +10,7 @@ import com.library.database.service.connector.MySQLConnector;
 public class StatementExecutor {
 	public ResultSet rs = null;
 	private Connection connection;
-	private Statement statement = null;
+	private Statement statement;
 
 	public StatementExecutor(String query, String queryType) {
 		if (queryType.equals("query")) {
@@ -41,7 +41,19 @@ public class StatementExecutor {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public boolean checkData() {
+		try {
+			if (rs.next())
+				return true;
+			else
+				return false;
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return (Boolean) null;
+		}
+	}
+
 	public void closeConnection() {
 		try {
 			if (connection != null)

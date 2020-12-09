@@ -36,47 +36,47 @@ public class FillSampleDBWithData {
 	
 	private void fillCitiesTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code) VALUES('Gorzow Wielkopolski', '66-400');");
+		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code, cities_is_archiwed) VALUES('Gorzow Wielkopolski', '66-400', 0);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code) VALUES('Poznan', '61-435');");
+		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code, cities_is_archiwed) VALUES('Poznan', '61-435', 0);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code) VALUES('Warszawa', '00-014');");
+		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code, cities_is_archiwed) VALUES('Warszawa', '00-014', 0);");
 	}
 
 	private void fillPublishersTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO publishers(publishers_name, publishers_year_established, cities_id) VALUES('Wydawnictwo Znak', 1959, 3);");
+		statement.executeUpdate("INSERT INTO publishers(publishers_name, publishers_year_established, publishers_is_archiwed, cities_id) VALUES('Wydawnictwo Znak', 1959, 0, 3);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO publishers(publishers_name, publishers_year_established, cities_id) VALUES('Wydawnictwo Zysk i Ska', 1987, 2);");
+		statement.executeUpdate("INSERT INTO publishers(publishers_name, publishers_year_established, publishers_is_archiwed, cities_id) VALUES('Wydawnictwo Zysk i Ska', 1987, 0, 2);");
 	}
 
 	private void fillAuthorsTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO authors(authors_name, authors_surname, authors_biography, authors_year_born, authors_year_died) VALUES('John Ronald Reuel', 'Tolkien', 'Brytyjski pisarz oraz profesor filologii klasycznej i literatury staroangielskiej na University of Oxford. Jako autor powiesci Wladca Pierscieni, ktorej akcja rozgrywa sie w mitycznym swiecie Srodziemia, spopularyzowal literature fantasy. Jest autorem wielu dziel rozgrywajacych sie w Srodziemiu, powiesci Hobbit, czyli tam i z powrotem, Wladca Pierscieni, Silmarillion oraz kilku krotkich form, opowiadan niezwiazanych lub luzno zwiazanych z wielka mitologia, tzw. Legendarium Srodziemia (zawartej w 12-tomowej History of the Middle-earth, opracowanej i wydanej przez Christophera Tolkiena).', 1892, 1973);");
+		statement.executeUpdate("INSERT INTO authors(authors_name, authors_surname, authors_biography, authors_year_born, authors_year_died, authors_is_archiwed) VALUES('John Ronald Reuel', 'Tolkien', 'Brytyjski pisarz oraz profesor filologii klasycznej i literatury staroangielskiej na University of Oxford. Jako autor powiesci Wladca Pierscieni, ktorej akcja rozgrywa sie w mitycznym swiecie Srodziemia, spopularyzowal literature fantasy. Jest autorem wielu dziel rozgrywajacych sie w Srodziemiu, powiesci Hobbit, czyli tam i z powrotem, Wladca Pierscieni, Silmarillion oraz kilku krotkich form, opowiadan niezwiazanych lub luzno zwiazanych z wielka mitologia, tzw. Legendarium Srodziemia (zawartej w 12-tomowej History of the Middle-earth, opracowanej i wydanej przez Christophera Tolkiena).', 1892, 1973, 0);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO authors(authors_name, authors_surname, authors_biography, authors_year_born, authors_year_died) VALUES('Thomas Stearns', 'Eliot', 'Amerykansko-brytyjski poeta, przedstawiciel modernizmu, dramaturg i eseista, od 1914 mieszkal w Anglii; laureat Nagrody Nobla w dziedzinie literatury (1948)', 1888, 1965);");
+		statement.executeUpdate("INSERT INTO authors(authors_name, authors_surname, authors_biography, authors_year_born, authors_year_died, authors_is_archiwed) VALUES('Thomas Stearns', 'Eliot', 'Amerykansko-brytyjski poeta, przedstawiciel modernizmu, dramaturg i eseista, od 1914 mieszkal w Anglii; laureat Nagrody Nobla w dziedzinie literatury (1948)', 1888, 1965, 0);");
 	}
 	
 	private void fillReadersTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO readers(readers_name, readers_surname, readers_date_of_birth, readers_address, readers_joined, cities_id) VALUES('Andrzej', 'Duppa', '22.10.1987', 'Jaworowa 32/1', '22.11.2012', 2);");
+		statement.executeUpdate("INSERT INTO readers(readers_name, readers_surname, readers_date_of_birth, readers_address, readers_joined, readers_is_archiwed, cities_id) VALUES('Andrzej', 'Duppa', '22.10.1987', 'Jaworowa 32/1', '22.11.2012', 0, 2);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO readers(readers_name, readers_surname, readers_date_of_birth, readers_address, readers_joined, cities_id) VALUES('Stefan', 'Jaroselsky', '06.06.1986', 'Aleje Jerozolimskie 12', '08.09.2019', 3);");
+		statement.executeUpdate("INSERT INTO readers(readers_name, readers_surname, readers_date_of_birth, readers_address, readers_joined, readers_is_archiwed, cities_id) VALUES('Stefan', 'Jaroselsky', '06.06.1986', 'Aleje Jerozolimskie 12', '08.09.2019', 0, 3);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO readers(readers_name, readers_surname, readers_date_of_birth, readers_address, readers_joined, cities_id) VALUES('Miroslaw', 'Szymczak', '12.05.1997', 'Grunwaldzka 12/41', '25.06.2018', 2);");
+		statement.executeUpdate("INSERT INTO readers(readers_name, readers_surname, readers_date_of_birth, readers_address, readers_joined, readers_is_archiwed, cities_id) VALUES('Miroslaw', 'Szymczak', '12.05.1997', 'Grunwaldzka 12/41', '25.06.2018', 0, 2);");
 	}
 
 	private void fillBooksTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, authors_id, publishers_id) VALUES('Wladca Pierscieni - Druzyna Pierscienia', 1234, 1984, 1, 1);");
+		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, books_is_archiwed, authors_id, publishers_id) VALUES('Wladca Pierscieni - Druzyna Pierscienia', 1234, 1984, 0, 1, 1);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, authors_id, publishers_id) VALUES('Wladca Pierscieni - Dwie Wieze', 1234, 1985, 1, 1);");
+		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, books_is_archiwed, authors_id, publishers_id) VALUES('Wladca Pierscieni - Dwie Wieze', 1234, 1985, 0, 1, 1);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, authors_id, publishers_id) VALUES('Wladca Pierscieni - Powrot Krola', 1234, 1986, 1, 1);");
+		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, books_is_archiwed, authors_id, publishers_id) VALUES('Wladca Pierscieni - Powrot Krola', 1234, 1986, 0, 1, 1);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, authors_id, publishers_id) VALUES('Hobbit', 1234, 1980, 1, 1);");
+		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, books_is_archiwed, authors_id, publishers_id) VALUES('Hobbit', 1234, 1980, 0, 1, 1);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, authors_id, publishers_id) VALUES('Ziemia jalowa', 1234, 1922, 2, 2);");
+		statement.executeUpdate("INSERT INTO books(books_title, books_isbn, books_year_published, books_is_archiwed, authors_id, publishers_id) VALUES('Ziemia jalowa', 1234, 1922, 0, 2, 2);");
 	}
 	
 	private void fillBorrowsTable() throws SQLException {

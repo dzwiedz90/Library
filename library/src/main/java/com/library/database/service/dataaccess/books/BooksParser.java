@@ -10,7 +10,7 @@ import com.library.resources.model.Book;
 
 public class BooksParser {
 	
-	public static Map parseAllBooks(ResultSet rs) {
+	public static Map<Long, Book> parseAllBooks(ResultSet rs) {
 		Map<Long, Book> books = new HashMap<>();
 		try {
 			Long i = 1L;
@@ -23,6 +23,7 @@ public class BooksParser {
 				book.setAuthorId(rs.getInt("authors_id"));
 				book.setAuthorName(rs.getString("authors_name"));
 				book.setAuthorSurname(rs.getString("authors_surname"));
+				book.setIsArichwed(rs.getBoolean("books_is_archiwed"));
 				book.setPublisherId(rs.getInt("publishers_id"));
 				book.setPublisher(rs.getString("publishers_name"));
 
