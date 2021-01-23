@@ -1,4 +1,4 @@
-package com.library.database.service.wrappers;
+package com.library.database.service.executors;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -26,6 +26,7 @@ public class StatementExecutor {
 			statement = connection.createStatement();
 			statement.executeUpdate(query);
 		} catch (ClassNotFoundException | SQLException e) {
+			System.out.print(e.getMessage());
 			e.printStackTrace();
 		}
 	}

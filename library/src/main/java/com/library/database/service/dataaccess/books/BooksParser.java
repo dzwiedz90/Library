@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.library.database.service.wrappers.StatementExecutor;
 import com.library.resources.model.Book;
 
 public class BooksParser {
@@ -28,7 +27,7 @@ public class BooksParser {
 				book.setAuthorId(rs.getInt("authors_id"));
 				book.setAuthorName(rs.getString("authors_name"));
 				book.setAuthorSurname(rs.getString("authors_surname"));
-				book.setIsArichwed(rs.getBoolean("books_is_archiwed"));
+				book.setIsArchived(rs.getBoolean("books_is_archiwed"));
 				book.setPublisherId(rs.getInt("publishers_id"));
 				book.setPublisher(rs.getString("publishers_name"));
 

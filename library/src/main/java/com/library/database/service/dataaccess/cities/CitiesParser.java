@@ -10,13 +10,13 @@ import com.library.resources.model.City;
 
 public class CitiesParser {
 	
-	public static Map parseAllCities(ResultSet rs) {
+	public static Map<Long, City> parseAllCities(ResultSet rs) {
 		Map<Long, City> cities = new HashMap<>();
 		try {
 			Long i = 1L;
 			while (rs.next()) {
 				City city = new City();
-				city.setId(rs.getInt("cities_id"));
+				city.setCityId(rs.getInt("cities_id"));
 				city.setName(rs.getString("cities_name"));
 				city.setPostalCode(rs.getString("cities_postal_code"));
 				

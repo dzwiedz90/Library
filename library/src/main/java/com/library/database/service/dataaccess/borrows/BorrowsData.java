@@ -3,7 +3,7 @@ package com.library.database.service.dataaccess.borrows;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.library.database.service.wrappers.StatementExecutor;
+import com.library.database.service.executors.StatementExecutor;
 import com.library.resources.model.Borrow;
 
 public class BorrowsData {

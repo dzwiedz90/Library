@@ -5,7 +5,7 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.library.database.service.wrappers.StatementExecutor;
+import com.library.database.service.executors.StatementExecutor;
 import com.library.resources.model.Publisher;
 
 public class PublishersData {

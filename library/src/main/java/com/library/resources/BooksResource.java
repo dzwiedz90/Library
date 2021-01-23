@@ -16,11 +16,15 @@ import javax.ws.rs.core.Response;
 import com.library.resources.model.Book;
 import com.library.resources.service.BookService;
 
+/**
+ * Book resource for REST API, handles HTTP requests
+ */
 @Path("/books")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class BooksResource {
 
+	// Service to handle requests from REST API and communicate with database
 	BookService booksService = new BookService();
 
 	@GET
@@ -30,7 +34,7 @@ public class BooksResource {
 
 	@GET
 	@Path("/{bookId}")
-	public Book getMessage(@PathParam("bookId") long bookId) {
+	public Book getBook(@PathParam("bookId") long bookId) {
 		Book book = booksService.getBook(bookId);
 		return book;
 	}

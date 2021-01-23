@@ -1,7 +1,6 @@
 package com.library.database.sample;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -56,7 +55,7 @@ public class CreateSampleDatabaseAndTables {
 
 	private void createCitiesTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("CREATE TABLE cities(cities_id INT AUTO_INCREMENT PRIMARY key, cities_name VARCHAR(40) NOT NULL, cities_postal_code VARCHAR(6) NOT NULL, cities_is_archiwed BOOLEAN NOT NULL);");
+		statement.executeUpdate("CREATE TABLE cities(cities_id INT AUTO_INCREMENT PRIMARY key, cities_name VARCHAR(40) NOT NULL, cities_postal_code VARCHAR(6) NOT NULL);");
 	}
 
 	private void createPublishersTable() throws SQLException {

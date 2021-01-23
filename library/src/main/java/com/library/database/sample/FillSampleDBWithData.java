@@ -1,7 +1,6 @@
 package com.library.database.sample;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -10,7 +9,6 @@ import com.library.database.service.connector.MySQLConnector;
 public class FillSampleDBWithData {
 	private Connection connection;
 	private Statement statement = null;
-	private ResultSet results = null;
 	
 	public FillSampleDBWithData() throws SQLException {
 		try {
@@ -36,11 +34,11 @@ public class FillSampleDBWithData {
 	
 	private void fillCitiesTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code, cities_is_archiwed) VALUES('Gorzow Wielkopolski', '66-400', 0);");
+		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code) VALUES('Gorzow Wielkopolski', '66-400');");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code, cities_is_archiwed) VALUES('Poznan', '61-435', 0);");
+		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code) VALUES('Poznan', '61-435');");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code, cities_is_archiwed) VALUES('Warszawa', '00-014', 0);");
+		statement.executeUpdate("INSERT INTO cities(cities_name, cities_postal_code) VALUES('Warszawa', '00-014');");
 	}
 
 	private void fillPublishersTable() throws SQLException {

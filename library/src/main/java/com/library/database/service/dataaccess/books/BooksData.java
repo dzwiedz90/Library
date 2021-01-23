@@ -4,7 +4,7 @@ package com.library.database.service.dataaccess.books;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.library.database.service.wrappers.StatementExecutor;
+import com.library.database.service.executors.StatementExecutor;
 import com.library.resources.model.Book;
 
 public class BooksData {

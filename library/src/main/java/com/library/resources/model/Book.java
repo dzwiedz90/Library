@@ -8,7 +8,7 @@ public class Book {
 	private int authorId;
 	private String authorName;
 	private String authorSurname;
-	private boolean isArichwed;
+	private boolean isArchived;
 	private int publisherId;
 	private String publisher;
 
@@ -17,7 +17,7 @@ public class Book {
 	}
 
 	public Book(int id, String title, int isbn, int yearPublished, int authorId, String authorName,
-			String authorSurname, boolean isArchiwed, int publisherId, String publisher) {
+			String authorSurname, boolean isArchived, int publisherId, String publisher) {
 		this.id = id;
 		this.title = title;
 		this.isbn = isbn;
@@ -25,17 +25,17 @@ public class Book {
 		this.authorId = authorId;
 		this.authorName = authorName;
 		this.authorSurname = authorSurname;
-		this.isArichwed = isArchiwed;
+		this.isArchived= isArchived;
 		this.publisherId = publisherId;
 		this.publisher = publisher;
 	}
 
-	public boolean getIsArichwed() {
-		return isArichwed;
+	public boolean getIsArchived() {
+		return isArchived;
 	}
 
-	public void setIsArichwed(boolean isArichwed) {
-		this.isArichwed = isArichwed;
+	public void setIsArchived(boolean Archived) {
+		this.isArchived = Archived;
 	}
 
 	public int getAuthorId() {

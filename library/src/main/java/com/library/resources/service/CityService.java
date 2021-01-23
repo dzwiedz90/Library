@@ -25,23 +25,23 @@ public class CityService {
 	}
 	
 	public City addCity(City city) {
-//		message.setId(messages.size() + 1);
-//		messages.put(message.getId(), message);
-//		database action
+		city.setCityId(cities.size() + 1);
+		cities.put(city.getCityId(), city);
+		citiesData.addCity(city);
 		return city;
 	}
-	
+
 	public City updateCity(City city) {
-//		if (message.getId() <= 0) {
-//			return null;
-//		}
-//		messages.put(message.getId(), message);
-//		database action
+		if (city.getCityId() <= 0) {
+			return null;
+		}
+		citiesData.updateCity(city);
 		return city;
 	}
 	
-	public City deleteCity(long id) {
+//	Cities cannot be deleted
+//	public City deleteCity(long id) {
 //		database action
-		return cities.remove(id);
-	}
+//		return cities.remove(id);
+//	}
 }
