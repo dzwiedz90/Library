@@ -12,6 +12,10 @@ public class CityService {
 	private Map<Long, City> cities;
 
 	public CityService() {
+		refreshCities();
+	}
+	
+	private void refreshCities() {
 		cities = citiesData.getAllCities();
 	}
 
@@ -25,9 +29,8 @@ public class CityService {
 	}
 	
 	public City addCity(City city) {
-		city.setCityId(cities.size() + 1);
-		cities.put(city.getCityId(), city);
 		citiesData.addCity(city);
+		refreshCities();
 		return city;
 	}
 

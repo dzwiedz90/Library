@@ -17,7 +17,6 @@ public class BooksParser {
 	public static Map<Long, Book> parseAllBooks(ResultSet rs) {
 		Map<Long, Book> books = new HashMap<>();
 		try {
-			Long i = 1L;
 			while (rs.next()) {
 				Book book = new Book();
 				book.setId(rs.getInt("books_id"));
@@ -31,8 +30,7 @@ public class BooksParser {
 				book.setPublisherId(rs.getInt("publishers_id"));
 				book.setPublisher(rs.getString("publishers_name"));
 
-				books.put(i, book);
-				i++;
+				books.put(book.getId(), book);
 			}
 		} catch (SQLException e) {
 			System.out.print(e.getMessage());

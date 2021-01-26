@@ -12,9 +12,9 @@ public class BorrowsData {
 		Map<Long, Borrow> borrows = new HashMap<>();
 
 		String query = "SELECT br.borrows_id, br.borrows_date_borrowed, br.borrows_return_date, br.borrows_is_returned, b.books_id, b.books_title, r.readers_id, r.readers_name, r.readers_surname FROM borrows AS br INNER JOIN books AS b ON br.books_id=b.books_id INNER JOIN readers AS r ON br.readers_id=r.readers_id;";
-		StatementExecutor wrapper = new StatementExecutor(query, "query");
-		borrows = BorrowsParser.parseAllBorrows(wrapper.rs);
-		wrapper.closeConnection();
+		StatementExecutor executor = new StatementExecutor(query, "query");
+		borrows = BorrowsParser.parseAllBorrows(executor.rs);
+		executor.closeConnection();
 
 		return borrows;
 	}
@@ -22,12 +22,12 @@ public class BorrowsData {
 	public boolean checkIfBorrowed(long bookId) {
 		String query = "SELECT borrows_is_returned FROM borrows  WHERE books_id=" + bookId
 				+ " AND borrows_is_returned=0;";
-		StatementExecutor wrapper = new StatementExecutor(query, "query");
-		if (wrapper.checkData() == true) {
-			wrapper.closeConnection();
+		StatementExecutor executor = new StatementExecutor(query, "query");
+		if (executor.checkData() == true) {
+			executor.closeConnection();
 			return true;
 		} else
-			wrapper.closeConnection();
+			executor.closeConnection();
 		return false;
 	}
 }

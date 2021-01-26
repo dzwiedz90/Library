@@ -1,6 +1,5 @@
 package com.library.database.service.dataaccess.books;
 
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,9 +20,9 @@ public class BooksData {
 	}
 
 	public void addBook(Book book) {
-		String query = "INSERT INTO books(books_title, books_isbn, books_year_published, authors_id, publishers_id) VALUES('"
-				+ book.getTitle() + "', " + book.getIsbn() + ", " + book.getYearPublished() + ", " + book.getAuthorId()
-				+ ", " + book.getPublisherId() + ");";
+		String query = "INSERT INTO books(books_title, books_isbn, books_year_published, books_is_archiwed, authors_id, publishers_id) VALUES('"
+				+ book.getTitle() + "', " + book.getIsbn() + ", " + book.getYearPublished() + ", "
+				+ book.getIsArchived() + ", " + book.getAuthorId() + ", " + book.getPublisherId() + ");";
 		StatementExecutor executor = new StatementExecutor(query, "update");
 		executor.closeConnection();
 	}

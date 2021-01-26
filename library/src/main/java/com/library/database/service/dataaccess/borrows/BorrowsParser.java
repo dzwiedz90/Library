@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.library.resources.model.Book;
 import com.library.resources.model.Borrow;
 
 public class BorrowsParser {

@@ -2,12 +2,14 @@ package com.library.resources.model;
 
 public class Reader {
 
-	private int id;
+	private long id;
 	private String name;
 	private String surname;
 	private String dateOfBirth;
 	private String address;
 	private String joinedLibrary;
+	private boolean isArchived;
+	private long cityId;
 	private String city;
 	private String postalCode;
 
@@ -15,22 +17,40 @@ public class Reader {
 
 	}
 
-	public Reader(int id, String name, String surname, String dateOfBirth, String address, String joinedLibrary, String city, String postalCode) {
+	public Reader(long id, String name, String surname, String dateOfBirth, String address, String joinedLibrary, boolean isArchived, long cityId, String city, String postalCode) {
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.dateOfBirth = dateOfBirth;
 		this.address = address;
 		this.joinedLibrary = joinedLibrary;
+		this.isArchived = isArchived;
+		this.cityId = cityId;
 		this.city = city;
 		this.postalCode = postalCode;
 	}
 
-	public int getId() {
+	public long getCityId() {
+		return cityId;
+	}
+
+	public void setCityId(long cityId) {
+		this.cityId = cityId;
+	}
+
+	public boolean getIsArchived() {
+		return isArchived;
+	}
+
+	public void setIsArchived(boolean isArchived) {
+		this.isArchived = isArchived;
+	}
+
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
