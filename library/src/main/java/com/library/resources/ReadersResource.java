@@ -56,7 +56,7 @@ public class ReadersResource {
 	@Path("/{readerId}")
 	public Response deleteReader(@PathParam("readerId") long readerId) {
 		if (readersService.deleteReader(readerId) == null) {
-			return Response.status(409).entity("reader archiwed").build();
+			return Response.status(409).entity("reader already archiwed").build();
 		} else
 			return Response.ok().entity("reader archiwed").build();
 	}

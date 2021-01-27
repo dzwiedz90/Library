@@ -12,6 +12,10 @@ public class AuthorService {
 	private Map<Long, Author> authors;
 	
 	public AuthorService() {
+		refreshData();
+	}
+	
+	private void refreshData() {
 		authors = authorsData.getAllAuthors();
 	}
 	
@@ -25,23 +29,24 @@ public class AuthorService {
 	}
 	
 	public Author addAuthor(Author author) {
-//		message.setId(messages.size() + 1);
-//		messages.put(message.getId(), message);
-//		database action
+		authorsData.addAuthor(author);
+		refreshData();
 		return author;
 	}
 	
 	public Author updateAuthor(Author author) {
-//		if (message.getId() <= 0) {
-//			return null;
-//		}
-//		messages.put(message.getId(), message);
-//		database action
+		authorsData.updateAuthor(author);
+		refreshData();
 		return author;
 	}
 	
 	public Author deleteAuthor(long id) {
-//		database action
-		return authors.remove(id);
+		if (authors.get(id).getIsArchiwed() == false) {
+			authorsData.deleteAuthor(id);
+			refreshData();
+			return authors.remove(id);
+		} else
+			return null;
+		
 	}
 }

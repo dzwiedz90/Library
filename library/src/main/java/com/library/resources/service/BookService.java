@@ -71,6 +71,7 @@ public class BookService {
 			return null;
 		}
 		booksData.updateBook(book);
+		refreshBooksData();
 		return book;
 	}
 
@@ -86,6 +87,7 @@ public class BookService {
 		BorrowsData borrowsData = new BorrowsData();
 		if (books.get(bookId).getIsArchived() == false && borrowsData.checkIfBorrowed(bookId) == false) {
 			booksData.deleteBook(bookId);
+			refreshBooksData();
 			return books.remove(bookId);
 		} else
 			return null;

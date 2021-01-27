@@ -9,10 +9,9 @@ import com.library.resources.model.Author;
 
 public class AuthorsParser {
 	
-	public static Map parseAllAuthors(ResultSet rs) {
+	public static Map<Long, Author> parseAllAuthors(ResultSet rs) {
 		Map<Long, Author> authors = new HashMap<>();
 		try {
-			Long i = 1L;
 			while (rs.next()) {
 				Author author = new Author();
 				author.setId(rs.getInt("authors_id"));
@@ -21,8 +20,9 @@ public class AuthorsParser {
 				author.setBiography(rs.getString("authors_biography"));
 				author.setYearBorn(rs.getInt("authors_year_born"));
 				author.setYearDied(rs.getInt("authors_year_died"));
-				authors.put(i, author);
-				i++;
+				author.setIsArchiwed(rs.getBoolean("authors_is_archiwed"));
+			
+				authors.put(author.getId(), author);
 			}
 		} catch (SQLException e) {
 			System.out.print(e.getMessage());

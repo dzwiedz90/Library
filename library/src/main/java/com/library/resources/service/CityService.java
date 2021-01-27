@@ -39,6 +39,7 @@ public class CityService {
 			return null;
 		}
 		citiesData.updateCity(city);
+		refreshCities();
 		return city;
 	}
 	

@@ -62,6 +62,7 @@ public class ReaderService {
 				return null;
 			}
 			readersData.updateReader(reader);
+			refreshReaders();
 			return reader;
 		}
 
@@ -73,6 +74,7 @@ public class ReaderService {
 		public Reader deleteReader(long readerId) {
 			if (readers.get(readerId).getIsArchived() == false) {
 				readersData.deleteReader(readerId);
+				refreshReaders();
 				return readers.remove(readerId);
 			} else
 				return null;
