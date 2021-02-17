@@ -1,29 +1,33 @@
 package com.library.resources.model;
 
 public class Publisher {
-	private int id;
+	private long id;
 	private String name;
+	private int cityId;
 	private String city;
 	private String postalCode;
 	private int yearEstablished;
+	private boolean isArchiwed; 
 
 	public Publisher() {
 
 	}
 
-	public Publisher(int id, String name, String city, String postalCode, int yearEstablished) {
+	public Publisher(long id, String name, int cityId, String city, String postalCode, int yearEstablished, boolean isArchiwed) {
 		this.id = id;
 		this.name = name;
+		this.cityId = cityId;
 		this.city = city;
 		this.postalCode = postalCode;
 		this.yearEstablished = yearEstablished;
+		this.isArchiwed = isArchiwed;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -33,6 +37,14 @@ public class Publisher {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getCityId() {
+		return this.cityId;
+	}
+	
+	public void setCityId(int cityId) {
+		this.cityId= cityId;
 	}
 
 	public String getCity() {
@@ -57,5 +69,13 @@ public class Publisher {
 
 	public void setYearEstablished(int yearEstablished) {
 		this.yearEstablished = yearEstablished;
+	}
+	
+	public void setIsArchiwed(boolean isArchiwed) {
+		this.isArchiwed = isArchiwed;
+	}
+	
+	public boolean getIsArchiwed() {
+		return this.isArchiwed;
 	}
 }

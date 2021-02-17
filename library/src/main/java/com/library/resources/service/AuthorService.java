@@ -47,6 +47,5 @@ public class AuthorService {
 			return authors.remove(id);
 		} else
 			return null;
-		
 	}
 }

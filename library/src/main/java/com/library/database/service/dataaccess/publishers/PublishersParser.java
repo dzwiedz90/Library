@@ -9,20 +9,20 @@ import com.library.resources.model.Publisher;
 
 public class PublishersParser {
 	
-	public static Map parseAllPublishers(ResultSet rs) {
+	public static Map<Long, Publisher> parseAllPublishers(ResultSet rs) {
 		Map<Long, Publisher> publishers = new HashMap<>();
 		try {
-			Long i = 1L;
 			while (rs.next()) {
 				Publisher publisher = new Publisher();
 				publisher.setId(rs.getInt("publishers_id"));
 				publisher.setName(rs.getString("publishers_name"));
 				publisher.setYearEstablished(rs.getInt("publishers_year_established"));
+				publisher.setCityId(rs.getInt("cities_id"));
 				publisher.setCity(rs.getString("cities_name"));
 				publisher.setPostalCode(rs.getString("cities_postal_code"));
+				publisher.setIsArchiwed(rs.getBoolean("publishers_is_archiwed"));
 
-				publishers.put(i, publisher);
-				i++;
+				publishers.put(publisher.getId(), publisher);
 			}
 		} catch (SQLException e) {
 			System.out.print(e.getMessage());

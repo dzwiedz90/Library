@@ -43,6 +43,7 @@ public class StatementExecutor {
 		}
 	}
 
+	@SuppressWarnings("null")
 	public boolean checkData() {
 		try {
 			if (rs.next())

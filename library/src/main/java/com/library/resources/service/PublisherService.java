@@ -12,6 +12,10 @@ public class PublisherService {
 	private Map<Long, Publisher> publishers;
 
 	public PublisherService() {
+		refreshPublishersData();
+	}
+	
+	private void refreshPublishersData() {
 		publishers = publishersData.getAllPublishers();
 	}
 
@@ -25,23 +29,26 @@ public class PublisherService {
 	}
 	
 	public Publisher addPublisher(Publisher publisher) {
-//		message.setId(messages.size() + 1);
-//		messages.put(message.getId(), message);
-//		database action
+		publishersData.addPublisher(publisher);
+		refreshPublishersData();
 		return publisher;
 	}
 	
 	public Publisher updatePublisher(Publisher publisher) {
-//		if (message.getId() <= 0) {
-//			return null;
-//		}
-//		messages.put(message.getId(), message);
-//		database action
+		if (publisher.getId() <= 0) {
+			return null;
+		}
+		publishersData.updatePublisher(publisher);
+		refreshPublishersData();
 		return publisher;
 	}
 	
 	public Publisher deletePublisher(long id) {
-//		database action
-		return publishers.remove(id);
+		if (publishers.get(id).getIsArchiwed() == false) {
+			publishersData.deletePublisher(id);
+			refreshPublishersData();
+			return publishers.remove(id);
+		} else
+			return null;
 	}
 }

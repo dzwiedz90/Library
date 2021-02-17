@@ -37,7 +37,6 @@ public class AuthorsResource {
 		@Path("/{authorId}")
 		public Author getAuthor(@PathParam("authorId") long authorId) {
 			Author author= authorsService.getAuthor(authorId);
-			System.out.println(author.getId());
 			return author;
 		}
 		
