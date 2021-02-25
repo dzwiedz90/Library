@@ -13,7 +13,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.library.resources.model.Book;
 import com.library.resources.model.Publisher;
 import com.library.resources.service.PublisherService;
 

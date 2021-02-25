@@ -80,6 +80,6 @@ public class CreateSampleDatabaseAndTables {
 	
 	private void createBorrowsTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("CREATE TABLE borrows(borrows_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, books_id INT NOT NULL, readers_id INT NOT NULL, borrows_date_borrowed VARCHAR(10) NOT NULL, borrows_return_date VARCHAR(10) NOT NULL, borrows_is_returned BOOLEAN NOT NULL, FOREIGN KEY (books_id) REFERENCES books(books_id), FOREIGN KEY (readers_id) REFERENCES readers(readers_id));");
+		statement.executeUpdate("CREATE TABLE borrows(borrows_id INT AUTO_INCREMENT PRIMARY KEY NOT NULL, books_id INT NOT NULL, readers_id INT NOT NULL, borrows_date_borrowed VARCHAR(10) NOT NULL, borrows_return_date VARCHAR(10) NOT NULL, borrows_is_returned BOOLEAN NOT NULL, borrows_date_returned VARCHAR(10), FOREIGN KEY (books_id) REFERENCES books(books_id), FOREIGN KEY (readers_id) REFERENCES readers(readers_id));");
 	}
 }

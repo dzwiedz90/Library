@@ -12,36 +12,34 @@ public class BorrowService {
 	private Map<Long, Borrow> borrows;
 
 	public BorrowService() {
+		refreshBorrowsData();
+	}
+
+	private void refreshBorrowsData() {
 		borrows = borrowsData.getAllBorrows();
 	}
 
 	public List<Borrow> getAllBorrows() {
 		return new ArrayList<Borrow>(borrows.values());
 	}
-	
+
 	public Borrow getBorrow(long id) {
 		Borrow borrow = borrows.get(id);
 		return borrow;
 	}
-	
+
 	public Borrow addBorrow(Borrow borrow) {
-//		message.setId(messages.size() + 1);
-//		messages.put(message.getId(), message);
-//		database action
+		borrowsData.addBorrow(borrow);
+		refreshBorrowsData();
 		return borrow;
 	}
-	
-	public Borrow updateBorrow(Borrow borrow) {
-//		if (message.getId() <= 0) {
-//			return null;
-//		}
-//		messages.put(message.getId(), message);
-//		database action
-		return borrow;
-	}
-	
-	public Borrow deleteBorrow(long id) {
-//		database action
-		return borrows.remove(id);
+
+	public Borrow updateBorrow(long id) {
+		if (id <= 0) {
+			return null;
+		}
+		borrowsData.updateBorrow(id);
+		refreshBorrowsData();
+		return borrows.get(id);
 	}
 }

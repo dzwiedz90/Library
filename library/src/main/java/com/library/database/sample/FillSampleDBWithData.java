@@ -79,12 +79,12 @@ public class FillSampleDBWithData {
 	
 	private void fillBorrowsTable() throws SQLException {
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO borrows(books_id, readers_id, borrows_date_borrowed, borrows_return_date, borrows_is_returned) VALUES(1, 1, '09.11.2020', '22.11.2020', 1);");
+		statement.executeUpdate("INSERT INTO borrows(books_id, readers_id, borrows_date_borrowed, borrows_return_date, borrows_is_returned, borrows_date_returned) VALUES(1, 1, '09.11.2020', '22.11.2020', 1, '19.11.2020');");
 		statement = connection.createStatement();
 		statement.executeUpdate("INSERT INTO borrows(books_id, readers_id, borrows_date_borrowed, borrows_return_date, borrows_is_returned) VALUES(1, 2, '23.11.2020', '06.12.2020', 0);");
 		statement = connection.createStatement();
 		statement.executeUpdate("INSERT INTO borrows(books_id, readers_id, borrows_date_borrowed, borrows_return_date, borrows_is_returned) VALUES(2, 3, '09.11.2020', '22.11.2020', 0);");
 		statement = connection.createStatement();
-		statement.executeUpdate("INSERT INTO borrows(books_id, readers_id, borrows_date_borrowed, borrows_return_date, borrows_is_returned) VALUES(3, 3, '09.11.2020', '22.11.2020', 1);");
+		statement.executeUpdate("INSERT INTO borrows(books_id, readers_id, borrows_date_borrowed, borrows_return_date, borrows_is_returned, borrows_date_returned) VALUES(3, 3, '09.11.2020', '22.11.2020', 1, '06.11.2020');");
 	}
 }

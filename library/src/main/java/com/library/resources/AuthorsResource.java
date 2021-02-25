@@ -14,7 +14,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.library.resources.model.Author;
-import com.library.resources.model.Book;
 import com.library.resources.service.AuthorService;
 
 /**

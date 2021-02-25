@@ -4,6 +4,7 @@ public class Borrow {
 	private int id;
 	private String dateBorrowed;
 	private String returnDate;
+	private String dateReturned;
 	private Boolean isReturned;
 	private int bookId;
 	private String bookTitle;
@@ -15,17 +16,26 @@ public class Borrow {
 
 	}
 
-	public Borrow(int id, String dateBorrowed, String returnDate, Boolean isReturned, int bookId, String bookTitle,
+	public Borrow(int id, String dateBorrowed, String returnDate, String dateReturned, Boolean isReturned, int bookId, String bookTitle,
 			int readerId, String readerName, String readerSurname) {
 		this.id = id;
 		this.dateBorrowed = dateBorrowed;
 		this.returnDate = returnDate;
+		this.dateReturned = dateReturned;
 		this.isReturned = isReturned;
 		this.bookId = bookId;
 		this.bookTitle = bookTitle;
 		this.readerId = readerId;
 		this.readerName = readerName;
 		this.readerSurname = readerSurname;
+	}
+
+	public String getDateReturned() {
+		return dateReturned;
+	}
+
+	public void setDateReturned(String dateReturned) {
+		this.dateReturned = dateReturned;
 	}
 
 	public int getId() {

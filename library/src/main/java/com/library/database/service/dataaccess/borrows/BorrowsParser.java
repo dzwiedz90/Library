@@ -18,6 +18,7 @@ public class BorrowsParser {
 				borrow.setId(rs.getInt("borrows_id"));
 				borrow.setDateBorrowed(rs.getString("borrows_date_borrowed"));
 				borrow.setReturnDate(rs.getString("borrows_return_date"));
+				borrow.setDateReturned(rs.getString("borrows_date_returned"));
 				borrow.setIsReturned(rs.getBoolean("borrows_is_returned"));
 				borrow.setBookId(rs.getInt("books_id"));
 				borrow.setBookTitle(rs.getString("books_title"));
